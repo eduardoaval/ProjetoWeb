@@ -18,6 +18,10 @@ button {
   background-color: transparent;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .text-input {
   border-radius: 20px;
   min-height: 25px;
@@ -126,7 +130,7 @@ button {
 .card-star {
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 .card-text-box {
@@ -138,6 +142,7 @@ button {
   background-color: #3671b6;
   text-align: left;
   padding-bottom: 10px;
+  display: block;
 }
 
 .card-text {
@@ -147,6 +152,9 @@ button {
   margin-bottom: 0px;
   color: #fff;
   text-align: left;
+}
+
+.pdB{
   padding-bottom: 10px;
 }
 
@@ -154,13 +162,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
 }
 
 .card {
-  margin: 0px 10px;
+  margin: 10px 10px;
+  list-style: none;
+  flex: 0 0 25%;
 }
 .card-inner{
   border: 2px solid #3671b6;
+  display: block;
 }
 .card-image {
   height: 185px;
@@ -185,6 +198,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
 }
 
 .review-image {
@@ -197,6 +212,8 @@ button {
   border: 2px solid #3671b6;
   max-width: 800px;
   min-height: 228px;
+  list-style: none;
+  margin-top: 30px;
 }
 
 .review-image-button {
@@ -226,6 +243,38 @@ button {
   padding-bottom: 10px;
 }
 
+.review-full-button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-left: 10px;
+  color: #fff;
+  text-align: left;
+  margin-top: 1em;
+  padding-bottom: 10px;
+}
+
+.review-full-button:hover {
+  text-decoration: underline;
+}
+
+.user-button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-left: 10px;
+  color: #fff;
+  text-align: left;
+  margin-top: 1em;
+  padding-bottom: 10px;
+}
+
+.user-button:hover {
+  text-decoration: underline;
+}
+
 .review-user-text:hover {
   text-decoration: underline;
+}
+
+.heart-icon:hover {
+  color: #ffd000;
 }
