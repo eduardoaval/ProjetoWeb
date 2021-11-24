@@ -7,7 +7,7 @@ http.createServer(function (req, res) {
     switch (u.pathname) {
 //------------------------------------------------------------------------- GET
         case '/':
-            fs.readFile("index.html", (err, data) => {
+            fs.readFile("src/Home/index.html", (err, data) => {
                 if (err) {
                     res.writeHead(404, { 'Content-Type': 'text/html' });
                     return res.end("<h1> 404 File Not Found </h1>");
@@ -17,7 +17,7 @@ http.createServer(function (req, res) {
                 return res.end();
             }); break;
         case '/dark':
-        fs.readFile("indexdark.html", (err, data) => {
+        fs.readFile("src/Home/indexdark.html", (err, data) => {
             if (err) {
                 res.writeHead(404, { 'Content-Type': 'text/html' });
                 return res.end("<h1> 404 File Not Found </h1>");
@@ -27,13 +27,27 @@ http.createServer(function (req, res) {
             return res.end();
         }); break;
 
-        case '/form':
-            res.write("<h1> Dados na query (ou form) </h1>");
-            res.write("<h2> Os dados que você enviou foram: </h2>");
-            param = u.searchParams
-            res.write("<p>" + param.get("nome") + "</p>");
-            res.write("<p>" + param.get("curso") + "</p>");
+        case '/movie':
+        fs.readFile("src/Details/index.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
             return res.end();
+        }); break;
+
+        case '/movie/dark':
+        fs.readFile("src/Details/indexdark.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
 
 //------------------------------------------------------------------------- POST
         case '/post':
@@ -79,8 +93,8 @@ http.createServer(function (req, res) {
             })
             break;
 
-        case '/style.css':
-            fs.readFile("style.css", (err, data) => {
+        case '/css/homestyle.css':
+            fs.readFile("src/Home/css/homestyle.css", (err, data) => {
                 if (err) {
                     res.statusCode = '204'
                     return res.end();
@@ -91,8 +105,20 @@ http.createServer(function (req, res) {
             })
             break;
 
-        case '/styledark.css':
-            fs.readFile("styledark.css", (err, data) => {
+        case '/css/homestyledark.css':
+            fs.readFile("src/Home/css/homestyledark.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
+
+        case '/css/moviestyle.css':
+            fs.readFile("src/Details/css/moviestyle.css", (err, data) => {
                 if (err) {
                     res.statusCode = '204'
                     return res.end();
