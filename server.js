@@ -62,6 +62,7 @@ http.createServer(function (req, res) {
             return res.end();
 
         case '/style.css':
+            // Change to styleblack.css to dark mode
             fs.readFile("style.css", (err, data) => {
                 if (err) {
                     res.writeHead(404, { 'Content-Type': 'text/html' });
