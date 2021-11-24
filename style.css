@@ -2,22 +2,27 @@
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
 }
 
 body {
   background: #fff;
-  margin: 0px;
 }
+
 h1 {
   text-align: left;
   color: #3671b6;
   font-size: 2.2rem;
   font-weight: bold;
+  padding-top: 30px;
 }
 
 button {
   cursor: pointer;
-  border: none;
   background-color: transparent;
 }
 
@@ -57,7 +62,7 @@ ul {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 30px;
+  min-height: 70px;
   background-color: #3671b6;
   padding: 10px;
   display: flex;
@@ -72,13 +77,12 @@ ul {
     border-bottom: none;
     border-right: 2px solid #000;
     border-right-width: 2px;
-    font-weight: bold;
     background-color: #3671b6;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    outline: none;
     font-weight: bold;
     font-size: 1rem;
+    padding: 10px;
 }
 
 .header-button:hover {
@@ -97,7 +101,6 @@ ul {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding: 5px;
-  outline: none;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -152,13 +155,8 @@ ul {
   font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
-  margin-bottom: 0px;
   color: #fff;
   text-align: left;
-}
-
-.pdB{
-  padding-bottom: 10px;
 }
 
 .card-list {
@@ -166,7 +164,7 @@ ul {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 0;
+  padding-top: 30px;
 }
 
 .card {
@@ -176,16 +174,12 @@ ul {
 }
 .card-inner{
   border: 2px solid #3671b6;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 .card-image {
   height: 185px;
   width: 274px;
-}
-
-.card-button{
-  border: none;
-  padding: 0px;
 }
 
 .card-button:hover{
@@ -202,7 +196,7 @@ ul {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 0;
+  padding-top: 30px;
 }
 
 .review-image {
@@ -220,9 +214,7 @@ ul {
 }
 
 .review-image-button {
-  border: none;
   background-color: #fff;
-  padding: 0;
 }
 
 .review-image-button:hover{
@@ -233,6 +225,7 @@ ul {
 
 .review-body {
   padding-left: 10px;
+  padding-top: 10px;
   background-color: #3671b6;
 }
 
@@ -240,10 +233,8 @@ ul {
   font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
-  margin-bottom: 0px;
   color: #fff;
   text-align: left;
-  padding-bottom: 10px;
 }
 
 .review-full-button {
@@ -252,8 +243,6 @@ ul {
   padding-left: 10px;
   color: #fff;
   text-align: left;
-  margin-top: 1em;
-  padding-bottom: 10px;
 }
 
 .review-full-button:hover {
@@ -266,8 +255,6 @@ ul {
   padding-left: 10px;
   color: #fff;
   text-align: left;
-  margin-top: 1em;
-  padding-bottom: 10px;
 }
 
 .user-button:hover {
@@ -276,6 +263,10 @@ ul {
 
 .review-user-text:hover {
   text-decoration: underline;
+}
+
+.heart-icon {
+  color: #232323;
 }
 
 .heart-icon:hover {
