@@ -16,6 +16,16 @@ http.createServer(function (req, res) {
                 res.write(data);
                 return res.end();
             }); break;
+        case '/dark':
+        fs.readFile("indexdark.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
 
         case '/form':
             res.write("<h1> Dados na query (ou form) </h1>");
@@ -73,6 +83,18 @@ http.createServer(function (req, res) {
                 return res.end();
             })
             break;
+
+            case '/styledark.css':
+                fs.readFile("styledark.css", (err, data) => {
+                    if (err) {
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        return res.end("<h1> 404 File Not Found </h1>");
+                    }
+                    res.writeHead(200, {"Content-Type": "text/css"});
+                    res.write(data);
+                    return res.end();
+                })
+                break;
           
         default:
             res.statusCode = '404'

@@ -1,15 +1,19 @@
-html {
-  font-size: 62.5%;
+* {
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
 }
+
 body {
-  font-family: 'Quicksand', sans-serif;
-  background: #232323;
+  background: #fff;
   margin: 0px;
+  background: #232323;
 }
 h1 {
   text-align: left;
   color: #3671b6;
-  font-size: 3.4rem;
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
 button {
@@ -30,7 +34,7 @@ ul {
   border-color: #3671b6;
   background-color: #232323;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.3rem;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -40,7 +44,7 @@ ul {
   border-radius: 20px;
   min-height: 25px;
   border-width: 2px;
-  font-size: 2rem;
+  font-size: 1.3rem;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -75,7 +79,7 @@ ul {
     transition: 0.5s;
     outline: none;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 .header-button:hover {
@@ -90,7 +94,7 @@ ul {
   border: 2px solid #fff;
   background-color: #232323;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding: 5px;
@@ -135,7 +139,7 @@ ul {
 }
 
 .card-text-box {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
   margin-bottom: 0px;
@@ -147,7 +151,7 @@ ul {
 }
 
 .card-text {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
   margin-bottom: 0px;
@@ -235,7 +239,7 @@ ul {
 }
 
 .review-user-text {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
   margin-bottom: 0px;
@@ -245,7 +249,7 @@ ul {
 }
 
 .review-full-button {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
   color: #fff;
@@ -259,7 +263,7 @@ ul {
 }
 
 .user-button {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 10px;
   color: #fff;
@@ -278,4 +282,8 @@ ul {
 
 .heart-icon:hover {
   color: #ffd000;
+}
+
+.long-text {
+  font-weight: normal;
 }
