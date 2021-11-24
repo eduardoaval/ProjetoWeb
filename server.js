@@ -68,15 +68,22 @@ http.createServer(function (req, res) {
 //------------------------------------------------------------------ OUTOS RECURSOS
 
         case '/favicon.ico':
-            res.statusCode = '204'
-            return res.end();
+            fs.readFile("favicon.ico", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "image/x-icon"});
+                res.write(data);
+                return res.end();
+            })
+            break;
 
         case '/style.css':
-            // Change to styleblack.css to dark mode
             fs.readFile("style.css", (err, data) => {
                 if (err) {
-                    res.writeHead(404, { 'Content-Type': 'text/html' });
-                    return res.end("<h1> 404 File Not Found </h1>");
+                    res.statusCode = '204'
+                    return res.end();
                 }
                 res.writeHead(200, {"Content-Type": "text/css"});
                 res.write(data);
@@ -84,17 +91,17 @@ http.createServer(function (req, res) {
             })
             break;
 
-            case '/styledark.css':
-                fs.readFile("styledark.css", (err, data) => {
-                    if (err) {
-                        res.writeHead(404, { 'Content-Type': 'text/html' });
-                        return res.end("<h1> 404 File Not Found </h1>");
-                    }
-                    res.writeHead(200, {"Content-Type": "text/css"});
-                    res.write(data);
+        case '/styledark.css':
+            fs.readFile("styledark.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
                     return res.end();
-                })
-                break;
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
           
         default:
             res.statusCode = '404'
