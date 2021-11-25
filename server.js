@@ -128,6 +128,18 @@ http.createServer(function (req, res) {
                 return res.end();
             })
             break;
+
+        case '/movie/css/moviestyledark.css':
+            fs.readFile("src/Details/css/moviestyledark.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
           
         default:
             res.statusCode = '404'
