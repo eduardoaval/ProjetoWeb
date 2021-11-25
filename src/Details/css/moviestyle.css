@@ -283,6 +283,11 @@ ul {
   color: #000;
 }
 
+.long-text-review {
+  font-weight: normal;
+  color: #fff;
+}
+
 .movie-card{
   display: flex;
   width: 70%;
