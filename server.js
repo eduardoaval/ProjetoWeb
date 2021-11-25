@@ -27,6 +27,17 @@ http.createServer(function (req, res) {
             return res.end();
         }); break;
 
+        case '/contrast':
+        fs.readFile("src/Home/indexcontrast.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
         case '/movie':
         fs.readFile("src/Details/index.html", (err, data) => {
             if (err) {
@@ -140,6 +151,18 @@ http.createServer(function (req, res) {
 
         case '/css/homestyledark.css':
             fs.readFile("src/Home/css/homestyledark.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
+
+        case '/css/contrast_style.css':
+            fs.readFile("src/Home/css/contrast_style.css", (err, data) => {
                 if (err) {
                     res.statusCode = '204'
                     return res.end();
