@@ -126,6 +126,39 @@ http.createServer(function (req, res) {
             return res.end();
         }); break;
 
+        case '/admin':
+        fs.readFile("src/Admin/index.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
+        case '/admin/dark':
+        fs.readFile("src/Admin/indexdark.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
+        case '/admin/contrast':
+        fs.readFile("src/Admin/indexcontrast.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
 //------------------------------------------------------------------------- POST
         case '/post':
             fs.readFile("indexPost.html", (err, data) => {
@@ -292,6 +325,42 @@ http.createServer(function (req, res) {
 
         case '/login/css/loginDark.css':
         fs.readFile("src/Login/css/loginDark.css", (err, data) => {
+            if (err) {
+                res.statusCode = '204'
+                return res.end();
+            }
+            res.writeHead(200, {"Content-Type": "text/css"});
+            res.write(data);
+            return res.end();
+        })
+        break;
+
+        case '/css/adminligth.css':
+            fs.readFile("src/Admin/css/adminligth.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
+        
+        case '/admin/css/adminContrast.css':
+        fs.readFile("src/Admin/css/adminContrast.css", (err, data) => {
+            if (err) {
+                res.statusCode = '204'
+                return res.end();
+            }
+            res.writeHead(200, {"Content-Type": "text/css"});
+            res.write(data);
+            return res.end();
+        })
+        break;
+
+        case '/admin/css/adminDark.css':
+        fs.readFile("src/Admin/css/adminDark.css", (err, data) => {
             if (err) {
                 res.statusCode = '204'
                 return res.end();
