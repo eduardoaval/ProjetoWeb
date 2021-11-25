@@ -93,6 +93,39 @@ http.createServer(function (req, res) {
             return res.end();
         }); break;
 
+        case '/login':
+        fs.readFile("src/Login/index.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
+        case '/login/dark':
+        fs.readFile("src/Login/indexdark.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
+        case '/login/contrast':
+        fs.readFile("src/Login/indexcontrast.html", (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("<h1> 404 File Not Found </h1>");
+            }
+            res.writeHead(200);
+            res.write(data);
+            return res.end();
+        }); break;
+
 //------------------------------------------------------------------------- POST
         case '/post':
             fs.readFile("indexPost.html", (err, data) => {
@@ -232,6 +265,42 @@ http.createServer(function (req, res) {
                 return res.end();
             })
             break;
+
+        case '/css/loginlight.css':
+            fs.readFile("src/Login/css/loginlight.css", (err, data) => {
+                if (err) {
+                    res.statusCode = '204'
+                    return res.end();
+                }
+                res.writeHead(200, {"Content-Type": "text/css"});
+                res.write(data);
+                return res.end();
+            })
+            break;
+        
+        case '/login/css/loginContrast.css':
+        fs.readFile("src/Login/css/loginContrast.css", (err, data) => {
+            if (err) {
+                res.statusCode = '204'
+                return res.end();
+            }
+            res.writeHead(200, {"Content-Type": "text/css"});
+            res.write(data);
+            return res.end();
+        })
+        break;
+
+        case '/login/css/loginDark.css':
+        fs.readFile("src/Login/css/loginDark.css", (err, data) => {
+            if (err) {
+                res.statusCode = '204'
+                return res.end();
+            }
+            res.writeHead(200, {"Content-Type": "text/css"});
+            res.write(data);
+            return res.end();
+        })
+        break;
           
         default:
             res.statusCode = '404'
