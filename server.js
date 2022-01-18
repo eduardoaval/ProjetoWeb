@@ -13,9 +13,9 @@ const home = require('./src/home')
 const movie = require('./src/movie')
 
 // ROTAS
-app.get('/', function (req, res) {return home(req,res)})
+app.get('/', home)
 
-app.get('/movie', function (req, res) {return movie(req,res)})
+app.get('/movie/:movieId', movie)
 
 const porta = 8080
 

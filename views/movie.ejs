@@ -25,34 +25,43 @@
         <div class="main">
             <div class="review-list">
                 <div class="movie-title">
-                    <h1><%= Movie.Title %></h1>
+                    <h1><%= Movie.title %></h1>
                     <div>
                         <div class="card-star">
                             <svg class="star-icon-big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-                            <b class="movie-rating"><%= Movie.Score %></b>
+                            <b class="movie-rating"><%= Movie.score %></b>
                         </div>
                     </div>
                 </div>
                 <div class="review-list">
                     <div class="movie-card">
-                        <img class="movie-poster" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
-                        <img class="movie-photos" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                        <% if (Movie.imagePoster) { %>
+                            <img class="movie-poster" src="<%= Movie.imagePoster %>" alt="Not Found"/>
+                        <%} else { %>
+                            <img class="movie-poster" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                        <% } %>
+
+                        <% if (Movie.imageBanner) { %>
+                            <img class="movie-photos" src="<%= Movie.imageBanner %>" alt="Not Found"/>
+                        <%} else { %>
+                            <img class="movie-photos" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                        <% } %>
                     </div>
                     <div class="movie-description">
                         <div class="movie-description-text">
                             <div class="description-box">
-                                <% Movie.Tags.forEach(function(tag){ %>
+                                <% Movie.tags.split(', ').forEach(function(tag){ %>
                                     <button class="movie-label"><%= tag %></button>
                                   <% }); %>
                             </div>
                             <div class="description-box">
-                                <p><%= Movie.Description %></p>
+                                <p><%= Movie.description %></p>
                             </div>
                             <div class="description-box">
-                                <p>Diretor: <%= Movie.Director %></p>
+                                <p>Diretor: <%= Movie.author %></p>
                             </div>
                             <div class="description-box">
-                                <p>Data de Lançamento: <%= Movie.ReleaseDate %></p>
+                                <p>Data de Lançamento: <%= Movie.releaseDate %></p>
                             </div>
                             <div class="description-box border-none">
                                 <button class="movie-watch-button"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
@@ -66,17 +75,15 @@
                 <div class="movie-title-more">
                     <h1 class="pdT">Sinopse</h1>
                     <div class="movie-sinopse">
-                        <p class="long-text"><%= Movie.Sinopsis %></p>
+                        <p class="long-text"><%= Movie.synopsis %></p>
                     </div>
                 </div>
                 <div class="movie-title-more">
                     <h1 class="pdT">Elenco</h1>
                     <ul class="movie-cast-list movie-sinopse long-text" >
-                        <% Movie.Casting.forEach(function(actor){ %>
-                            <li>
-                                <p class="movie-cast-text"><b class="bold"><%= actor.Actor %></b> como <%= actor.Character %></p>
-                            </li>
-                          <% }); %>
+                        <li>
+                            <p class="movie-cast-text"><b class="bold"><%= Movie.cast %></p>
+                        </li>
                     </ul>
                 </div>
                 <div class="movie-title-more">
@@ -90,7 +97,7 @@
                 <div class="movie-title-more">
                     <h1 class="pdT">Curiosidades</h1>
                     <div class="movie-sinopse">
-                        <p class="long-text"><%= Movie.Curiosity %></p>
+                        <p class="long-text"><%= Movie.curiosities %></p>
                     </div>
                 </div>
                 <div class="movie-title-more">
