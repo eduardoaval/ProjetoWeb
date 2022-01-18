@@ -1,0 +1,65 @@
+{
+    "Movie": {
+        "Title": "Filme 1",
+        "Score": 7.3,
+        "Tags": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "ImagePoster": "",
+        "ImageBanner": "",
+        "Director": "Diretor 1",
+        "ReleaseDate": "09/2021",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus tristique ligula vitae euismod. Vivamus turpis neque, tincidunt et tempor eu, tincidunt et magna. Aenean fermentum nulla quis orci ultricies, in dapibus massa egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut elementum neque.",
+        "Sinopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie mauris et metus aliquam placerat. Suspendisse felis lectus, ultrices quis vestibulum ut, rutrum a eros. Suspendisse euismod accumsan scelerisque. Cras malesuada ipsum sed eros sodales, non malesuada magna facilisis. Nullam quis elit fermentum, sodales quam pulvinar, tincidunt nunc. Vestibulum nec sagittis ligula. Quisque ac turpis ligula. Ut convallis tristique turpis, id tristique tellus lacinia eget. Ut placerat fermentum lacus nec ultricies. Fusce pretium, leo eu cursus iaculis, lorem quam aliquet urna, nec vulputate leo leo placerat diam. Curabitur erat enim, luctus ac tristique id, tempor in libero. Vestibulum rhoncus dolor.",
+        "Casting": [
+            {
+                "Actor": "Ator 1",
+                "Character": "Personagem 1"
+            },
+            {
+                "Actor": "Ator 2",
+                "Character": "Personagem 2"
+            },
+            {
+                "Actor": "Ator 3",
+                "Character": "Personagem 3"
+            }
+        ],
+        "Curiosity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere blandit convallis. Curabitur in nulla odio. Sed bibendum semper ligula mollis dapibus. Donec porta lectus a mauris pellentesque mattis nec placerat turpis. Donec scelerisque tempus diam non dignissim. Suspendisse potenti. Nulla iaculis sapien eu augue lobortis sagittis. Cras a vehicula quam. Maecenas eu maximus odio. Pellentesque feugiat nibh vel nulla blandit fringilla. Curabitur et sodales elit. Donec at egestas ex, eu faucibus eros. In ligula risus, faucibus in est et, faucibus tempus dui. Nunc nec quam vitae risus faucibus fringilla quis non diam. Suspendisse gravida vehicula est at ultrices. Duis pharetra hendrerit augue, ut dignissim augue congue non. Donec in ex id turpis volutpat fermentum. Phasellus varius leo eu nunc aliquam tempus. Aenean et nunc a risus tincidunt interdum sit amet vel sapien. In porta, ex eu cursus venenatis, ipsum sem venenatis justo, eget suscipit tortor lectus eget tortor. Duis ac libero non arcu auctor sodales vitae at enim. Fusce nec nulla malesuada, efficitur velit a, accumsan tortor. Nullam quis pulvinar velit. Nullam odio urna, cursus id nulla a, maximus euismod odio. Nam eleifend, felis dapibus tempus dapibus, lacus arcu accumsan mauris, vel consectetur orci elit eu elit. Donec consectetur tincidunt diam, quis eleifend leo. Sed quis metus sodales, dapibus elit at, feugiat tortor. Donec et nunc vitae nibh laoreet lacinia. Nulla facilisi. In porta tristique volutpat. Phasellus dictum nisl eu quam bibendum porta. Duis in fermentum erat. Duis quis velit eros. Aliquam erat volutpat. Cras vel risus a leo egestas commodo. Phasellus eleifend magna id lorem aliquam, rhoncus sodales justo congue. Pellentesque lacinia ligula faucibus cursus pretium. Suspendisse elementum nunc augue, at tristique tortor malesuada at. Curabitur posuere porttitor tristique. Integer nec scelerisque ante. Donec eu dolor rutrum, aliquam erat non, maximus mi. Sed sit amet blandit magna. Pellentesque."
+    },
+    "SimilarContent": [
+        {
+            "Score": 7.3,
+            "Name": "Placeholder",
+            "Image": ""
+        },
+        {
+            "Score": 2.4,
+            "Name": "Placeholder",
+            "Image": ""
+        },
+        {
+            "Score": 6.5,
+            "Name": "Placeholder",
+            "Image": ""
+        }
+    ],
+    "Reviews": [
+        {
+            "Username": "Usuário 1",
+            "Score": 7.4,
+            "Review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque est, consectetur at lectus quis, pharetra porttitor nulla. Nullam mattis est nisi, id efficitur nisi consectetur eget. Sed condimentum sed ipsum et faucibus. Aliquam elementum risus et ante ultricies, quis viverra odio lacinia. Nullam faucibus iaculis feugiat. Sed tincidunt augue.",
+            "LikeCount": 10,
+            "Image": ""
+        },
+        {
+            "Username": "Usuário 2",
+            "Score": 9.2,
+            "Review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque est, consectetur at lectus quis, pharetra porttitor nulla. Nullam mattis est nisi, id efficitur nisi consectetur eget. Sed condimentum sed ipsum et faucibus. Aliquam elementum risus et ante ultricies, quis viverra odio lacinia. Nullam faucibus iaculis feugiat. Sed tincidunt augue.",
+            "LikeCount": 52,
+            "Image": ""
+        }
+    ]
+}

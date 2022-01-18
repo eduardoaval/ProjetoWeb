@@ -1,0 +1,52 @@
+{
+	"TopContent": [
+		{
+			"Score": 7.3,
+			"Name": "Placeholder",
+			"Image": ""
+		},
+		{
+			"Score": 2.4,
+			"Name": "Placeholder",
+			"Image": ""
+		},
+		{
+			"Score": 6.5,
+			"Name": "Placeholder",
+			"Image": ""
+		}
+	],
+	"Releases": [
+		{
+			"Score": 8.8,
+			"Name": "Placeholder",
+			"Image": ""
+		},
+		{
+			"Score": 4.5,
+			"Name": "Placeholder",
+			"Image": ""
+		},
+		{
+			"Score": 7.8,
+			"Name": "Placeholder",
+			"Image": ""
+		}
+	],
+	"NewReviews": [
+		{
+			"Username": "Usuário 1",
+			"Score": 7.4,
+			"Review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque est, consectetur at lectus quis, pharetra porttitor nulla. Nullam mattis est nisi, id efficitur nisi consectetur eget. Sed condimentum sed ipsum et faucibus. Aliquam elementum risus et ante ultricies, quis viverra odio lacinia. Nullam faucibus iaculis feugiat. Sed tincidunt augue.",
+			"LikeCount": 10,
+			"Image": ""
+		},
+		{
+			"Username": "Usuário 2",
+			"Score": 9.2,
+			"Review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque est, consectetur at lectus quis, pharetra porttitor nulla. Nullam mattis est nisi, id efficitur nisi consectetur eget. Sed condimentum sed ipsum et faucibus. Aliquam elementum risus et ante ultricies, quis viverra odio lacinia. Nullam faucibus iaculis feugiat. Sed tincidunt augue.",
+			"LikeCount": 52,
+			"Image": ""
+		}
+	]
+}

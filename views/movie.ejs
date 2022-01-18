@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Your Reviews</title>
+        <link rel="stylesheet" href="/css/moviestyle.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <button class="header-button" type="button">Filmes</button>
+            <button class="header-button" type="button">Jogos</button>
+            <button class="header-button" type="button">Livros</button>
+            <form class="search-bar">
+                <input class="search-input" type="text" placeholder="Pesquisar">
+                <button type="submit" class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </button>
+            </form>
+            <button class="header-button" type="button">Entrar</button>
+        </div>
+        <div class="main">
+            <div class="review-list">
+                <div class="movie-title">
+                    <h1><%= Movie.Title %></h1>
+                    <div>
+                        <div class="card-star">
+                            <svg class="star-icon-big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                            <b class="movie-rating"><%= Movie.Score %></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-list">
+                    <div class="movie-card">
+                        <img class="movie-poster" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                        <img class="movie-photos" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                    </div>
+                    <div class="movie-description">
+                        <div class="movie-description-text">
+                            <div class="description-box">
+                                <% Movie.Tags.forEach(function(tag){ %>
+                                    <button class="movie-label"><%= tag %></button>
+                                  <% }); %>
+                            </div>
+                            <div class="description-box">
+                                <p><%= Movie.Description %></p>
+                            </div>
+                            <div class="description-box">
+                                <p>Diretor: <%= Movie.Director %></p>
+                            </div>
+                            <div class="description-box">
+                                <p>Data de Lançamento: <%= Movie.ReleaseDate %></p>
+                            </div>
+                            <div class="description-box border-none">
+                                <button class="movie-watch-button"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
+                            </div>
+                        </div>
+                        <div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-title-more">
+                    <h1 class="pdT">Sinopse</h1>
+                    <div class="movie-sinopse">
+                        <p class="long-text"><%= Movie.Sinopsis %></p>
+                    </div>
+                </div>
+                <div class="movie-title-more">
+                    <h1 class="pdT">Elenco</h1>
+                    <ul class="movie-cast-list movie-sinopse long-text" >
+                        <% Movie.Casting.forEach(function(actor){ %>
+                            <li>
+                                <p class="movie-cast-text"><b class="bold"><%= actor.Actor %></b> como <%= actor.Character %></p>
+                            </li>
+                          <% }); %>
+                    </ul>
+                </div>
+                <div class="movie-title-more">
+                    <h1 class="pdT">Críticas do Usuários</h1>
+                    <ul class="review-list movie-sinopse">
+                        <% Reviews.forEach(function(User){ %>
+                            <%- include('templates/userreviewcard', {User: User}); %>
+                          <% }); %>
+                    </ul>
+                </div>
+                <div class="movie-title-more">
+                    <h1 class="pdT">Curiosidades</h1>
+                    <div class="movie-sinopse">
+                        <p class="long-text"><%= Movie.Curiosity %></p>
+                    </div>
+                </div>
+                <div class="movie-title-more">
+                    <h1>Filmes Parecidos</h1>
+                    <ul class="card-list">
+                        <li class="card">
+                            <button class="card-button">
+                                <span class="card-inner">
+                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                                    <span class="card-text-box">
+                                        <span class="card-star">
+                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                                            <b class="card-text">7.3</b>
+                                        </span>
+                                        <b class="card-text">Filme 2</b>
+                                    </span>
+                                </span>
+                            </button>
+                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
+                        </li>
+                        <li class="card">
+                            <button class="card-button">
+                                <span class="card-inner">
+                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                                    <span class="card-text-box">
+                                        <span class="card-star">
+                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                                            <b class="card-text">2.4</b>
+                                        </span>
+                                        <b class="card-text">Filme 3</b>
+                                    </span>
+                                </span>
+                            </button>
+                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
+                        </li>
+                        <li class="card">
+                            <button class="card-button">
+                                <span class="card-inner">
+                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
+                                    <span class="card-text-box">
+                                        <span class="card-star">
+                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                                            <b class="card-text">6.5</b>
+                                        </span>
+                                        <b class="card-text">Filme 4</b>
+                                    </span>
+                                </span>
+                            </button>
+                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
