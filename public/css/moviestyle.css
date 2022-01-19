@@ -305,13 +305,14 @@
     height: 100%;
     width: 250px;
     border-right: 2px solid #3671b6;
-    padding: 1px
+    padding: 1px;
   }
   
   .movie-photos {
     height: 100%;
     width: 100%;
     padding: 1px;
+    max-width: 679px;
   }
   
   .movie-description {

@@ -23,6 +23,7 @@ app.post('/medias', MediaController.createMedia);
 app.post('/medias/:userId', MediaController.update);
 app.get('/medias', MediaController.index);
 app.get('/medias/:mediaId', MediaController.getById);
+app.get('/media/releases', MediaController.releases);
 //app.get('/medias/data', MediaController.createData);
 
 

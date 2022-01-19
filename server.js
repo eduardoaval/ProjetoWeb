@@ -13,7 +13,7 @@ const home = require('./src/home')
 const movie = require('./src/movie')
 
 // ROTAS
-app.get('/', home)
+app.get('/', home.index)
 
 app.get('/movie/:movieId', movie.movieById)
 app.get('/movie', movie.index)

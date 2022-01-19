@@ -1,6 +1,8 @@
 const Media = require('../models/Media');
 const fs = require('fs');
 const { default: fetch } = require('cross-fetch');
+const connection = require('../database');
+const { Op } = require('sequelize/dist');
 
 module.exports = {
     async createMedia(req, res){
@@ -59,6 +61,12 @@ module.exports = {
         const media = await Media.findByPk(mediaId);
 
         return res.json(media);
+    },
+
+    async releases(req, res) {
+        const medias = await Media.findAll({ where:{ releaseDate: { [Op.not]: null } } ,order: connection.literal('"releaseDate" DESC'), limit: 3});
+
+        return res.json(medias);
     },
 
     async update(req,res) {
