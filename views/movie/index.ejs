@@ -8,11 +8,10 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-        <script src="/js/scripts.js"></script>
     </head>
     <body>
         <div class="header">
-            <button class="header-button" type="button" onclick="onListMoviesPress()">Filmes</button>
+            <button class="header-button" type="button">Filmes</button>
             <button class="header-button" type="button">Jogos</button>
             <button class="header-button" type="button">Livros</button>
             <form class="search-bar">
@@ -25,26 +24,9 @@
         </div>
         <div class="main">
             <div>
-                <h1>Em Alta</h1>
                 <ul class="card-list">
-                    <% TopContent.forEach(function(Movie){ %>
-                      <%- include('templates/moviecard', {Movie: Movie}); %>
-                    <% }); %>
-                </ul>
-            </div>
-            <div class="main-div">
-                <h1>Lançamentos</h1>
-                <ul class="card-list">
-                    <% Releases.forEach(function(Movie){ %>
-                      <%- include('templates/moviecard', {Movie: Movie}); %>
-                    <% }); %>
-                </ul>
-            </div>
-            <div class="main-div">
-                <h1>Críticas recentes</h1>
-                <ul class="review-list">
-                    <% NewReviews.forEach(function(User){ %>
-                      <%- include('templates/userreviewcard', {User: User}); %>
+                    <% Movies.forEach(function(Movie){ %>
+                      <%- include('../templates/moviecard', {Movie: Movie}); %>
                     <% }); %>
                 </ul>
             </div>

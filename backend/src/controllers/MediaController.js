@@ -45,8 +45,13 @@ module.exports = {
 
     async index(req, res) {
         const medias = await Media.findAll();
+        let response = []
 
-        return res.json(medias);
+        medias.forEach(m=> {
+            response.push({id:m.id, title:m.title, imagePoster: m.imagePoster, score: m.score})
+        })
+
+        return res.json(response);
     },
 
     async getById(req, res) {
