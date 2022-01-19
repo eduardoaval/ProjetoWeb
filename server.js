@@ -16,7 +16,8 @@ const movie = require('./src/movie')
 app.get('/', home.index)
 
 app.get('/movie/:movieId', movie.movieById)
-app.get('/movie', movie.index)
+app.get('/movies', movie.index)
+app.get('/movies/:movieQuery', movie.search)
 
 const porta = 8080
 

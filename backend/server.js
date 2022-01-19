@@ -24,6 +24,8 @@ app.post('/medias/:userId', MediaController.update);
 app.get('/medias', MediaController.index);
 app.get('/medias/:mediaId', MediaController.getById);
 app.get('/media/releases', MediaController.releases);
+app.get('/media/topcontent', MediaController.topContent);
+app.get('/media/search/:searchQuery', MediaController.search);
 //app.get('/medias/data', MediaController.createData);
 
 

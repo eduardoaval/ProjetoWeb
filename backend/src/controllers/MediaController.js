@@ -69,6 +69,20 @@ module.exports = {
         return res.json(medias);
     },
 
+    async topContent(req, res) {
+        const medias = await Media.findAll({ order: connection.literal('"score" DESC'), limit: 3});
+
+        return res.json(medias);
+    },
+
+    async search(req, res) {
+        const { searchQuery }  = req.params;
+        
+        const medias = await Media.findAll({ where: { title: {[Op.iLike]: `%${searchQuery}%`} } });
+
+        return res.json(medias);
+    },
+
     async update(req,res) {
         const {
             title,

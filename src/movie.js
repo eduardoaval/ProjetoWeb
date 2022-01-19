@@ -19,5 +19,12 @@ module.exports = {
         res.render('movie/index', moviesData);
     },
 
-    
+    async search(req, res) {
+        const { movieQuery }  = req.params;
+        const response = await fetch(`http://localhost:9090/media/search/${movieQuery}`);
+        const movies = await response.json();
+        let moviesData = { Movies: movies }
+        res.render('movie/index', moviesData);
+    },
+
 }
