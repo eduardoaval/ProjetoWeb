@@ -25,6 +25,23 @@
     padding: 10px;
 }
 
+.home-button {
+  height: 100%;
+  min-width: 100px;
+  color: #fff;
+  background-color: #3671b6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+.home-button:hover {
+  background-color: #5da9ff70;
+  border-radius: 5px;
+}
+
 .header-button:hover {
   background-color: #5da9ff70;
   border-radius: 5px;

@@ -1,6 +1,7 @@
 const express = require('express');  
 const FollowerController = require('./src/controllers/FollowerController');
 const MediaController = require('./src/controllers/MediaController');
+const ReviewController = require('./src/controllers/ReviewController');
 const UserController = require('./src/controllers/UserController');
 const app = express();  
 require('./src/database/index');
@@ -10,6 +11,7 @@ app.use(express.json())
 // UserController
 app.post('/users', UserController.createUser);
 app.post('/users/:userId', UserController.update);
+app.get('/users/:userId', UserController.getById);
 app.get('/users', UserController.index);
 
 
@@ -28,6 +30,14 @@ app.get('/media/topcontent', MediaController.topContent);
 app.get('/media/search/:searchQuery', MediaController.search);
 //app.get('/medias/data', MediaController.createData);
 
+// ReviewController
+app.post('/reviews', ReviewController.createReview);
+app.post('/reviews/:reviewId', ReviewController.getById);
+app.get('/reviews/:reviewId', ReviewController.getById);
+app.get('/review/user/:userId', ReviewController.getByUserId);
+app.get('/review/media/:mediaId', ReviewController.getByMediaId);
+app.get('/reviews', ReviewController.index);
+app.get('/review/latest', ReviewController.latest);
 
 // Listen 9090
 app.listen(9090)

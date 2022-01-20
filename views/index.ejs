@@ -32,8 +32,8 @@
             <div class="main-div">
                 <h1>Críticas recentes</h1>
                 <ul class="review-list">
-                    <% NewReviews.forEach(function(User){ %>
-                      <%- include('templates/userreviewcard', {User: User}); %>
+                    <% NewReviews.forEach(function(Review){ %>
+                      <%- include('templates/userreviewcard', { Review }); %>
                     <% }); %>
                 </ul>
             </div>

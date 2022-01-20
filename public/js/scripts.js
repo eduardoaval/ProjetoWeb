@@ -7,6 +7,14 @@ function onMoviePress(id){
     location.href = location.origin + '/movie/' + id;
 }
 
+function onUserPress(id){
+    location.href = location.origin + '/user/' + id;
+}
+
+function onHomePress(){
+    location.href = location.origin + '/';
+}
+
 function onListMoviesPress(){
     location.href = location.origin + '/movies';
 }

@@ -1,5 +1,4 @@
 const { default: fetch } = require('cross-fetch');
-const fs = require('fs');
 
 module.exports = {
     async movieById(req, res) {
@@ -8,7 +7,7 @@ module.exports = {
         const movie = await response.json();
         let date = new Date(movie.releaseDate);
         let releaseDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' +date.getFullYear(); 
-        let movieData = { Movie: {...movie, releaseDate }, Reviews: []}
+        let movieData = { Movie: {...movie, releaseDate } }
         res.render('movie/details', movieData);
     },
 

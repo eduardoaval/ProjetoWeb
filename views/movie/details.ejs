@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=0.6">
         <title>Your Reviews</title>
         <link rel="stylesheet" href="/css/moviestyle.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
@@ -78,8 +78,8 @@
                 <div class="movie-title-more">
                     <h1 class="pdT">Críticas do Usuários</h1>
                     <ul class="review-list movie-sinopse">
-                        <% Reviews.forEach(function(User){ %>
-                            <%- include('templates/userreviewcard', {User: User}); %>
+                        <% Movie.reviews.forEach(function(Review){ %>
+                            <%- include('../templates/userreviewcard', { Review }); %>
                           <% }); %>
                     </ul>
                 </div>
@@ -92,51 +92,9 @@
                 <div class="movie-title-more">
                     <h1>Filmes Parecidos</h1>
                     <ul class="card-list">
-                        <li class="card">
-                            <button class="card-button">
-                                <span class="card-inner">
-                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
-                                    <span class="card-text-box">
-                                        <span class="card-star">
-                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-                                            <b class="card-text">7.3</b>
-                                        </span>
-                                        <b class="card-text">Filme 2</b>
-                                    </span>
-                                </span>
-                            </button>
-                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
-                        </li>
-                        <li class="card">
-                            <button class="card-button">
-                                <span class="card-inner">
-                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
-                                    <span class="card-text-box">
-                                        <span class="card-star">
-                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-                                            <b class="card-text">2.4</b>
-                                        </span>
-                                        <b class="card-text">Filme 3</b>
-                                    </span>
-                                </span>
-                            </button>
-                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
-                        </li>
-                        <li class="card">
-                            <button class="card-button">
-                                <span class="card-inner">
-                                    <img class="card-image" src="https://patriciaelias.com.br/wp-content/uploads/2021/01/placeholder.png" alt="Not Found"/>
-                                    <span class="card-text-box">
-                                        <span class="card-star">
-                                            <svg class="star-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-                                            <b class="card-text">6.5</b>
-                                        </span>
-                                        <b class="card-text">Filme 4</b>
-                                    </span>
-                                </span>
-                            </button>
-                            <button class="movie-watch-button pdT10 bg-main"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
-                        </li>
+                        <% Movie.similarMedia.forEach(function(Movie){ %>
+                          <%- include('../templates/moviecard', {Movie: Movie}); %>
+                        <% }); %>
                     </ul>
                 </div>
             </div>

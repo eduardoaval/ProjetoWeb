@@ -3,6 +3,8 @@ const fs = require('fs');
 const { default: fetch } = require('cross-fetch');
 const connection = require('../database');
 const { Op } = require('sequelize/dist');
+const Review = require('../models/Review');
+const { getUsersAndMedias, getSimilarMedia } = require('../scripts');
 
 module.exports = {
     async createMedia(req, res){
@@ -59,8 +61,11 @@ module.exports = {
     async getById(req, res) {
         const { mediaId }  = req.params;
         const media = await Media.findByPk(mediaId);
+        const reviewsDb = await Review.findAll({ where: { mediaId }});
+        const reviews = await getUsersAndMedias(reviewsDb);
+        const similarMedia = await getSimilarMedia(media);
 
-        return res.json(media);
+        return res.json( { ...media.dataValues, reviews, similarMedia } );
     },
 
     async releases(req, res) {
