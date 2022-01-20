@@ -53,8 +53,9 @@ module.exports = {
     async getByMediaId(req, res) {
         const { mediaId }  = req.params;
         const reviews = await Review.findAll({ where: { mediaId } });
+        const response = await getUsersAndMedias(reviews);
 
-        return res.json(reviews);
+        return res.json(response);
     },
 
     async latest(req, res) {

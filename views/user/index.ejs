@@ -8,8 +8,10 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="/js/user/scripts.js"></script>
     </head>
     <body>
+        <script>loadReviewCount('<%-User.id%>')</script>
         <%- include('../templates/header'); %>
         <div class="main">
                 <div class="profile-info">
@@ -24,6 +26,7 @@
                     <h2>Filmes: 738</h2>
                     <h2>Jogos: 20</h2>
                     <h2>Livros: 42</h2>
+                    <h2 id ="review-count">Reviews: </h2>
                 </div>
 
                 <div class="profile-follow">

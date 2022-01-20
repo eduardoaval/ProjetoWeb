@@ -23,5 +23,4 @@ function submitted(event) {
   event.preventDefault();
   let query = document.getElementById('search-input');
   location.href = location.origin + '/movies/' + query.value;
-  console.log('aloo')
 }

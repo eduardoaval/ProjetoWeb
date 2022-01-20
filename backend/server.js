@@ -7,6 +7,12 @@ const app = express();
 require('./src/database/index');
 
 app.use(express.json())
+let allowCrossDomain = function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', "*");
+	res.header('Access-Control-Allow-Headers', "*");
+	next();
+  }
+app.use(allowCrossDomain);
 
 // UserController
 app.post('/users', UserController.createUser);
@@ -32,7 +38,6 @@ app.get('/media/search/:searchQuery', MediaController.search);
 
 // ReviewController
 app.post('/reviews', ReviewController.createReview);
-app.post('/reviews/:reviewId', ReviewController.getById);
 app.get('/reviews/:reviewId', ReviewController.getById);
 app.get('/review/user/:userId', ReviewController.getByUserId);
 app.get('/review/media/:mediaId', ReviewController.getByMediaId);
