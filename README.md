@@ -21,6 +21,28 @@ Tela do administrador: corresponde a um formulário para adicionar novos conteú
    
 Por fim, após feitas todas as telas foram passados todos os códigos HTML e CSS no validador pedidos pelo professor, apesar de terem sido detectado alguns erros os mesmos foram corrigidos rapidamente e após uma segunda passagem pelo validador ele não detectou mais erros.
 
+Para o segundo release do projeto de um site de reviews de mídias (filmes, jogos e livros) foram divididas as atividades do release para cada membro através de uma reunião via google meet, onde Eduardo e Rommel foram responsáveis pelos itens A (Gerar dinamicamente as diferentes seções do documento HTML a partir de dados
+armazenados no servidor, considerando usuários e/ou perfis distintos.), B (Organizar os seus dados de tal maneira que um mesmo template possa ser usado para
+diferentes usuários e/ou situações. Os templates podem ser definidos usando o EJS,
+conforme exemplos fornecidos, ou usar módulos semelhantes a partir do NodeJS.) e C (A carga de conteúdo deve contemplar tanto requisições HTTP síncronas, a partir de
+formulários e hiperlinks, como assíncronas, a partir de JS CLIENTE). Clailton e Glasser ficaram com o item D (Implemente, nesta versão, a alternância entre os arquivos CSS definidos no release 1 por
+meio de solução interativa.) e E (Como recurso de acessibilidade adicional, implemente também o ajuste de tamanho das
+fontes por meio de botões (A+ e A-), cuja última configuração deve ser armazenada no
+cliente juntamente ao último CSS definido.)
+
+Para começo, foi definido como seria a organização das primeiras tabelas que iriam constar no banco de dados, assim foi feita a tabela de mídias, usuários e reviews, onde cada uma tem ligação com a outra de diferentes formas. A de usuários tem um link com a de mídias pois eles podem marcar aquelas que eles já degustaram, assim como fazer reviews, o que também mostra o link que a tabela de reviews tem pela de mídias e usuário. Após isso foi utilizado a API do IMDB para popular nosso banco de dados com alguns filmes, a fim de posteriormente utilizar esses dados do banco para popular nosso site, e assim foi feita a criação de cada página de cada filme, a página de lista de filmes e também a ordenação dos filmes na página principal (categorias em alta e últimos lançamentos). Também foi possível vincular reviews para serem mostradas na página inicial pelo filtro de data e também na página de algum filme em específico. Vale ressaltar que foi utilizado também o sequelize para auxiliar nas atividades dos itens A, B e C.
+
+Nova barra de menu:
+Para a inclusão das funcionalidades de troca do design para alto contraste e alteração no tamanho da fonte, visando maior acessibilidade, foi criada uma nova barra de menu. Essa nova versão conta com os mesmos campos da anterior, como botões que levam a outras páginas e a barra de busca. Como novidade, foram inseridos os botões que realizam as funções anteriormente citadas e, visando facilitar o acesso do usuário às mesmas, a barra agora é fixa no topo da tela, permitindo que o acesso a seus botões seja feito em qualquer ponto da página, sem precisar retornar ao início.
+Página detalhes do filme: corresponde a página que o visitante frequenta ao selecionar um filme; ela contém, além da barra de menu do topo descrita anteriormente, a imagem do filme, nome, data de lançamento, descrição, imagens extras, diretor, sinopse, categoria do filme, elenco, avaliação dos usuários, nota agregada no site e curiosidades sobre o filme.
+
+Alteração de tamanho da fonte:
+Foram adicionados dois botões; um é responsável por aumentar a fonte, enquanto outro diminui. Event listeners foram criados para monitorar cliques sobre esses botões. A lógica é a seguinte: o tamanho de fonte atual é capturado e uma comparação é feita: para aumentar, o tamanho atual deve ser menor que 20 e para diminuir deve ser maior que 14. Esse passo é realizado para evitar indefinição nos limites de tamanho. Passando por esse filtro, o tamanho é alterado em duas unidades, para maior ou menor. O valor padrão é 16, que é definido anteriormente.
+
+A mudança no contraste é feita através do código Js no lado cliente e as preferencia do usuario é armazenado no LocalStorage. Assim quando o usuario carregar  a pagina tem uma função responsavel por pegar as preferencias guardadas e configurar de acordo com as escolhas anteriore.
+As preferencias são variavéis do tipo strings cujo os valores serão adicionados ou removidos da classList dos elementos HTML da página.
+
+
 IMAGENS EXEMPLO RELEASE 1
 ![image](https://user-images.githubusercontent.com/95040008/143489709-bb67377f-71f5-46b1-8199-d08847a0441a.png)
 ![image](https://user-images.githubusercontent.com/95040008/143489726-cab7b0c4-a299-42cd-8839-3bf1e38e8075.png)
