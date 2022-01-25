@@ -39,9 +39,9 @@
                 </div>
 
                 <div class="follow">
-                    <button class="follow-btn" type="button">Seguir</button>
+                    <button class="follow-btn" type="button" id="follow-button" onclick="handleFollowButton('<%-User.id%>')">Seguir</button>
                 </div>
-                    
+                <script>loadFollowButton('<%-User.id%>');</script>
                 <h1>Filmes</h1>
                 <ul class="card-list">
                     <li class="card">

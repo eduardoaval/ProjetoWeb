@@ -99,5 +99,22 @@ module.exports = {
         const users = await User.findAll({ where: { [Op.or]: ids }});
 
         return res.json(users);
+    },
+
+    async getById(req, res) {
+        const { followerId, followedId } = req.params;
+
+        const user = await User.findByPk(followedId);
+
+        if(!user){
+            return res.status(400).json({ error: "User not found"});
+        }
+
+        const hasFollowed = await Follower.findOne({ where: { followerId, followedId } })
+        if(!hasFollowed){
+            return res.status(400).json({ error: "User not followed"});
+        }
+
+        return res.json(hasFollowed);
     }
 }

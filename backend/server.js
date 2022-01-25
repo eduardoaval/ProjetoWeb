@@ -29,6 +29,7 @@ app.post('/follower/:followerId/follow/:followedId', FollowerController.follow);
 app.delete('/follower/:followerId/follow/:followedId', FollowerController.unfollow);
 app.get('/followeds/:followerId', FollowerController.getfolloweds);
 app.get('/followers/:followedId', FollowerController.getfollowers);
+app.get('/follower/:followerId/follow/:followedId', FollowerController.getById);
 
 // MediaController
 app.post('/medias', MediaController.createMedia);
