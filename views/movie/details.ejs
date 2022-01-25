@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="/js/movie/scripts.js"></script>
     </head>
     <body>
         <%- include('../templates/header'); %>
@@ -52,12 +53,14 @@
                             <div class="description-box">
                                 <p>Data de Lançamento: <%= Movie.releaseDate %></p>
                             </div>
-                            <div class="description-box border-none">
-                                <button class="movie-watch-button"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">Adicionar como assistido</b></button>
+                            <div class="description-box border-none" >
+                                <button class="movie-watch-button" id="watched-button" onclick="handleWatchButton('<%-Movie.id%>')"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">
+                                    Adicionar como assistido
+                                </b></button>
                             </div>
+                            <script>loadWatchedButton('<%-Movie.id%>')</script> 
                         </div>
                         <div>
-    
                         </div>
                     </div>
                 </div>

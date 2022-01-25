@@ -67,7 +67,7 @@ module.exports = {
         return res.json({});
     },
 
-    async index(req, res) {
+    async getfolloweds(req, res) {
         const { followerId } = req.params;
 
         const user = await User.findByPk(followerId);
@@ -77,6 +77,23 @@ module.exports = {
         }
 
         const followers = await Follower.findAll({ where: { followerId } })
+        const ids = followers.map(x=> x = { id: x.followedId});
+            
+        const users = await User.findAll({ where: { [Op.or]: ids }});
+
+        return res.json(users);
+    },
+
+    async getfollowers(req, res) {
+        const { followedId } = req.params;
+
+        const user = await User.findByPk(followedId);
+
+        if(!user){
+            return res.status(400).json({ error: "User not found"});
+        }
+
+        const followers = await Follower.findAll({ where: { followedId } })
         const ids = followers.map(x=> x = { id: x.followedId});
             
         const users = await User.findAll({ where: { [Op.or]: ids }});

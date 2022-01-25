@@ -11,7 +11,12 @@
         <script src="/js/user/scripts.js"></script>
     </head>
     <body>
-        <script>loadReviewCount('<%-User.id%>')</script>
+        <script>
+            loadReviewCount('<%-User.id%>');
+            loadWatchedCount('<%-User.id%>');
+            loadFollowedsCount('<%-User.id%>');
+            loadFollowersCount('<%-User.id%>');
+        </script>
         <%- include('../templates/header'); %>
         <div class="main">
                 <div class="profile-info">
@@ -23,15 +28,14 @@
                 </div>
 
                 <div class="profile-numbers">
-                    <h2>Filmes: 738</h2>
+                    <h2 id ="movies-count">Filmes: </h2>
                     <h2>Jogos: 20</h2>
-                    <h2>Livros: 42</h2>
                     <h2 id ="review-count">Reviews: </h2>
                 </div>
 
                 <div class="profile-follow">
-                    <h2>Seguindo: 50</h2>
-                    <h2>Seguidores: 50</h2>
+                    <h2 id ="followeds-count">Seguindo: </h2>
+                    <h2 id ="followers-count">Seguidores: </h2>
                 </div>
 
                 <div class="follow">
