@@ -1,5 +1,6 @@
 const { Op } = require("sequelize/dist");
 const connection = require("./database");
+const Like = require("./models/Like");
 const Media = require("./models/Media");
 const User = require("./models/User");
 
@@ -10,13 +11,17 @@ module.exports = {
     
         const mediaIds = reviews.map(x=> x = { id: x.mediaId});
         const medias = await Media.findAll({ where: { [Op.or]: mediaIds }});
+
+        const reviewsIds = reviews.map(x=> x = { reviewId: x.id});
+        const likes = await Like.findAll({ where: { [Op.or]: reviewsIds } });
     
         let response = []
     
         reviews.forEach(r => {
             let user = users.find(x=> x.id == r.userId);
             let media = medias.find(x=> x.id == r.mediaId);
-            response.push({ ...r.dataValues, username: user.nickName, imagePoster: media.imagePoster })
+            let like = likes.filter(x=> x.reviewId == r.id);
+            response.push({ ...r.dataValues, username: user.nickName, imagePoster: media.imagePoster, likeCount: like.length })
         });
 
         return response;

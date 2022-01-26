@@ -61,6 +61,7 @@ app.post('/like/user/:userId/review/:reviewId', LikeController.likeReview);
 app.get('/like/user/:userId', LikeController.getByUserId);
 app.get('/like/review/:reviewId', LikeController.getByReviewId);
 app.delete('/like/user/:userId/review/:reviewId', LikeController.dislike);
+app.get('/like/user/:userId/review/:reviewId', LikeController.getById);
 
 // Listen 9090
 app.listen(9090)

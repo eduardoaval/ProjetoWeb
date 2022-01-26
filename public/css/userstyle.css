@@ -265,14 +265,6 @@
     text-decoration: underline;
   }
   
-  .heart-icon {
-    color: #232323;
-  }
-  
-  .heart-icon:hover {
-    color: #ffd000;
-  }
-  
   .long-text {
     font-weight: normal;
   }

@@ -36,14 +36,6 @@
     text-decoration: underline;
   }
 
-  .heart-icon {
-    color: #232323;
-  }
-  
-  .heart-icon:hover {
-    color: #ffd000;
-  }
-
   .long-text {
     font-weight: normal;
   }
@@ -80,4 +72,18 @@
     text-decoration: underline;
   }
   
-  
+  .heart-button {
+    color: #232323;
+  }
+
+  .heart-button:hover {
+    color: #ffd000;
+  }
+
+  .likedHeart-button {
+    color: #ffd000;
+  }
+
+  .likedHeart-button:hover {
+    color: #232323;
+  }

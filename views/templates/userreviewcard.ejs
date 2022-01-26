@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="/css/reviewcard.css">
     <script src="/js/scripts.js"></script>
+    <script src="/js/review/scripts.js"></script>
 </head>
 <li class="review-card">
     <button class="review-image-button" onclick="onMoviePress('<%-Review.mediaId%>')">
@@ -21,10 +22,11 @@
         <p class="card-text long-text"><%= Review.description %></p>
         <div class="card-star">
             <div class="card-star">
-                <button class="heart-button">
-                    <i class="fa fa-heart heart-icon"></i>
+                <button class="heart-button" id="like-button-<%-Review.id%>" onclick="handleLikeButton('<%-Review.id%>')">
+                    <i class="fa fa-heart"></i>
                 </button>
-                <p class="card-text">10 likes</p>
+                <p class="card-text" id="like-count-<%-Review.id%>"><%= Review.likeCount %> likes</p>
+                <script>loadLikedButton('<%-Review.id%>');</script>
             </div>
             <button class="review-full-button">
                 Ver crítica completa

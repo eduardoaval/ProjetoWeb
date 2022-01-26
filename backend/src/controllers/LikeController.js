@@ -73,5 +73,17 @@ module.exports = {
         await Like.destroy({ where: { id: like.id } });
 
         return res.json({});
-    }
+    },
+
+    async getById(req, res){
+        const { userId, reviewId }  = req.params;
+
+        const like = await Like.findOne({ where: { userId, reviewId }});
+
+        if(!like){
+            return res.status(400).json({ error: "Like not found"});
+        }
+
+        return res.json(like);
+    },
 }
