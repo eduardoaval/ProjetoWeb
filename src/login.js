@@ -28,6 +28,10 @@ module.exports = {
         res.render('login/index');
     },
 
+    async signup(req, res) {
+        res.render('login/signup');
+    },
+
     async logout(req, res){
         req.session.user = null;
         req.session.token = null; 

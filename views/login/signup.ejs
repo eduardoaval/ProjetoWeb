@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="/js/login/scripts.js"></script>
-    <title>Login</title>
+    <title>Signup</title>
 </head>
 <body>
     <main>
@@ -16,14 +16,24 @@
         <div id="login-component">
             <h1>Login</h1>
             <form id="form-login" method="POST" action="/login">
+                <label for="nickName" class="labelInput">Usuário: </label>
+                <input id="nickName" class="logInputfields" type="text" name="nickName" minlength="3" required><br>
+
+                <label for="name" class="labelInput">Nome: </label>
+                <input id="name" class="logInputfields" type="text" name="name" minlength="3" required><br>
+
+                <label for="surname" class="labelInput">Sobrenome: </label>
+                <input id="surname" class="logInputfields" type="text" name="surname" minlength="3" required><br>
+
                 <label for="email" class="labelInput">Email: </label>
                 <input id="email" class="logInputfields" type="email" name="email" minlength="3" required><br>
-                <label for="password" class="labelInput">Password: </label>
+
+                <label for="password" class="labelInput">Senha: </label>
                 <input id="password" class="logInputfields" type="password" name="password" minlength="5" required><br>
             </form>
-            <button type="submit" id="btn-login" onclick="onLoginButtonPress()">Entrar</button>
+            <button type="submit" id="btn-login" onclick="onSignupButtonPress()">Cadastrar</button>
             <a id="error-message"></a>
-            <a href="/signup">Cadastrar</a>
+            <a href="/login">Login</a>
         </div>
     </main>
 </body>
