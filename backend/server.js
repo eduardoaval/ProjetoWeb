@@ -5,7 +5,7 @@ const MediaController = require('./src/controllers/MediaController');
 const ReviewController = require('./src/controllers/ReviewController');
 const UserController = require('./src/controllers/UserController');
 const WatchedController = require('./src/controllers/WatchedController');
-const app = express();  
+const app = express(); 
 require('./src/database/index');
 
 app.use(express.json())
@@ -22,6 +22,8 @@ app.post('/users', UserController.createUser);
 app.post('/users/:userId', UserController.update);
 app.get('/users/:userId', UserController.getById);
 app.get('/users', UserController.index);
+app.post('/user/login', UserController.login);
+app.get('/user/authenticate', UserController.authenticate);
 
 
 // FollowerController

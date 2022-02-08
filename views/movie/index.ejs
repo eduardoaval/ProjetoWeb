@@ -10,12 +10,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <%- include('../templates/header'); %>
+        <%- include('../templates/header', { IsLogged: IsLogged}); %>
         <div class="main">
             <div>
                 <ul class="card-list">
                     <% Movies.forEach(function(Movie){ %>
-                      <%- include('../templates/moviecard', {Movie: Movie}); %>
+                      <%- include('../templates/moviecard', {Movie: Movie, IsLogged: IsLogged, UserId: UserId}); %>
                     <% }); %>
                 </ul>
             </div>

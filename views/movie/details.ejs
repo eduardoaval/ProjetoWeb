@@ -11,7 +11,7 @@
         <script src="/js/movie/scripts.js"></script>
     </head>
     <body>
-        <%- include('../templates/header'); %>
+        <%- include('../templates/header', { IsLogged: IsLogged}); %>
         <div class="main">
             <div class="review-list">
                 <div class="movie-title">
@@ -54,11 +54,11 @@
                                 <p>Data de Lançamento: <%= Movie.releaseDate %></p>
                             </div>
                             <div class="description-box border-none" >
-                                <button class="movie-watch-button" id="watched-button" onclick="handleWatchButton('<%-Movie.id%>')"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">
+                                <button class="movie-watch-button" id="watched-button" onclick="handleWatchButton('<%-UserId%>', '<%-Movie.id%>')"><i class="fa fa-eye movie-watch-icon"></i><b class="movie-watch-text">
                                     Adicionar como assistido
                                 </b></button>
                             </div>
-                            <script>loadWatchedButton('<%-Movie.id%>')</script> 
+                            <script>loadWatchedButton('<%-UserId%>', '<%-Movie.id%>')</script> 
                         </div>
                         <div>
                         </div>
@@ -82,7 +82,7 @@
                     <h1 class="pdT">Críticas do Usuários</h1>
                     <ul class="review-list movie-sinopse">
                         <% Movie.reviews.forEach(function(Review){ %>
-                            <%- include('../templates/userreviewcard', { Review }); %>
+                            <%- include('../templates/userreviewcard', { Review, IsLogged, UserId }); %>
                           <% }); %>
                     </ul>
                 </div>

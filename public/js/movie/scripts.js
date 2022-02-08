@@ -1,7 +1,7 @@
-function loadWatchedButton(mediaId){
+function loadWatchedButton(userId, mediaId){
     const watchedButton = document.getElementById('watched-button');
     watchedButton.style.display = 'none';
-    fetch(`http://localhost:9090/watch/user/1/media/${mediaId}`)
+    fetch(`http://localhost:9090/watch/user/${userId}/media/${mediaId}`)
     .then(async (response)=>{
         response.json().then(()=>{
             if(response.status == 200)
@@ -22,12 +22,12 @@ function loadWatchedButton(mediaId){
     })
 }
 
-function handleWatchButton(mediaId){
+function handleWatchButton(userId, mediaId){
     if(document.getElementById('watched-button').innerText == "Adicionar como assistido"){
-        watchMedia(1, mediaId);
+        watchMedia(userId, mediaId);
     }
     else{
-        unwatchMedia(1, mediaId);
+        unwatchMedia(userId, mediaId);
     }
 }
 

@@ -1,10 +1,10 @@
 var likedClass = 'likedHeart-button';
 var dislikeClass = 'heart-button';
 
-function loadLikedButton(reviewId){
+function loadLikedButton(userId, reviewId){
     const likeButton = document.getElementById(`like-button-${reviewId}`);
     likeButton.style.display = 'none';
-    fetch(`http://localhost:9090/like/user/1/review/${reviewId}`)
+    fetch(`http://localhost:9090/like/user/${userId}/review/${reviewId}`)
     .then(async (response)=>{
         response.json().then(()=>{
             if(response.status == 200)
@@ -31,13 +31,13 @@ function loadLikedButton(reviewId){
     })
 }
 
-function handleLikeButton(reviewId){
+function handleLikeButton(userId, reviewId){
     const likeButton = document.getElementById(`like-button-${reviewId}`);
     if(!likeButton.checked){
-        likeReview(1, reviewId);
+        likeReview(userId, reviewId);
     }
     else{
-        dislike(1, reviewId);
+        dislike(userId, reviewId);
     }
 }
 

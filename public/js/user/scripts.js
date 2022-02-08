@@ -53,13 +53,13 @@ function loadFollowersCount(userId){
     })
 }
 
-function loadFollowButton(followedId){
+function loadFollowButton(userId, followedId){
     const followButton = document.getElementById('follow-button');
     followButton.style.display = 'none';
-    if(followedId == 1){
+    if(followedId == userId){
         return;
     }
-    fetch(`http://localhost:9090/follower/1/follow/${followedId}`)
+    fetch(`http://localhost:9090/follower/${userId}/follow/${followedId}`)
     .then(async (response)=>{
         response.json().then(()=>{
             if(response.status == 200)
@@ -80,12 +80,12 @@ function loadFollowButton(followedId){
     })
 }
 
-function handleFollowButton(followedId){
+function handleFollowButton(userId, followedId){
     if(document.getElementById('follow-button').innerText == "Seguir"){
-        follow(1, followedId);
+        follow(userId, followedId);
     }
     else{
-        unfollow(1, followedId);
+        unfollow(userId, followedId);
     }
 }
 

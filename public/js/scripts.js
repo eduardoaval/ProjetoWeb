@@ -7,6 +7,18 @@ function onMoviePress(id){
     location.href = location.origin + '/movie/' + id;
 }
 
+function onLoginPress(){
+    location.href = location.origin + '/login';
+}
+
+
+function onLogoutPress(){
+    fetch('/logout')
+    .then(res=> {
+        location.href = location.origin;
+    })
+}
+
 function onUserPress(id){
     location.href = location.origin + '/user/' + id;
 }
