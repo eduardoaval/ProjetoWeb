@@ -35,10 +35,11 @@ app.get('/follower/:followerId/follow/:followedId', FollowerController.getById);
 
 // MediaController
 app.post('/medias', MediaController.createMedia);
-app.post('/medias/:userId', MediaController.update);
+app.post('/medias/:mediaId', MediaController.update);
 app.get('/medias', MediaController.index);
 app.get('/medias/:mediaId', MediaController.getById);
 app.get('/media/releases', MediaController.releases);
+app.get('/media/user/:userId', MediaController.getByUserId);
 app.get('/media/topcontent', MediaController.topContent);
 app.get('/media/search/:searchQuery', MediaController.search);
 //app.get('/medias/data', MediaController.createData);

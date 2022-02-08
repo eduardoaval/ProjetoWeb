@@ -2,9 +2,10 @@ const Media = require('../models/Media');
 const fs = require('fs');
 const { default: fetch } = require('cross-fetch');
 const connection = require('../database');
-const { Op } = require('sequelize/dist');
+const { Op, where } = require('sequelize/dist');
 const Review = require('../models/Review');
 const { getUsersAndMedias, getSimilarMedia } = require('../scripts');
+const Watched = require('../models/Watched');
 
 module.exports = {
     async createMedia(req, res){
@@ -49,6 +50,20 @@ module.exports = {
 
     async index(req, res) {
         const medias = await Media.findAll();
+        let response = []
+
+        medias.forEach(m=> {
+            response.push({id:m.id, title:m.title, imagePoster: m.imagePoster, score: m.score})
+        })
+
+        return res.json(response);
+    },
+
+    async getByUserId(req, res) {
+        const { userId }  = req.params;
+        const watches =  await Watched.findAll({ where: { userId }});
+        const mediaIds = watches.map(x=> x = { id: x.mediaId});
+        const medias = await Media.findAll({ where: { [Op.or]: mediaIds }});
         let response = []
 
         medias.forEach(m=> {

@@ -5,8 +5,8 @@ module.exports = {
     async index(req, res) {
         let { IsLogged, UserId } = userInfo.getUserInfo(req.session);
         const { userId }  = req.params;
-        const response = await fetch(`http://localhost:9090/users/${userId}`);
-        const user = await response.json();
-        res.render('user/index', { User: user, IsLogged, UserId });
+        const user = await (await fetch(`http://localhost:9090/users/${userId}`)).json();
+        const medias = await (await fetch(`http://localhost:9090/media/user/${userId}`)).json();
+        res.render('user/index', { User: user, Movies:medias, IsLogged, UserId });
     }
 }
