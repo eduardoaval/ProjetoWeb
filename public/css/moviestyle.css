@@ -216,6 +216,7 @@
   }
   
   .review-card {
+    width: 100%;
     display: flex;
     border: 2px solid #3671b6;
     max-width: 800px;
@@ -235,6 +236,7 @@
   }
   
   .review-body {
+    width: 100%;
     padding-left: 10px;
     padding-top: 10px;
     background-color: #3671b6;
@@ -418,4 +420,21 @@
   
   .bg-main {
     background-color: #3671b6;
+  }
+
+  .review-input {
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+
+  .review-button{
+    min-width: 100px;
+    font-size: 4em;
+  }
+
+  .review-button:hover{
+    border: 2px solid #f5c518;
+    background-color: #5da9ff70;
   }

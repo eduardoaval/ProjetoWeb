@@ -58,6 +58,15 @@ module.exports = {
         return res.json(response);
     },
 
+    async getByUserIdMediaId(req, res) {
+        const { userId, mediaId }  = req.params;
+        const review = await Review.findOne({ where: { userId, mediaId } });
+        if(!review){
+            return res.status(400).json({ error: "Review not found"});
+        }
+        return res.json(review);
+    },
+
     async latest(req, res) {
         const reviews = await Review.findAll({ order: connection.literal('"createdAt" DESC'), limit: 3});
 

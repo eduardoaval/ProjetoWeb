@@ -47,6 +47,7 @@ app.get('/media/search/:searchQuery', MediaController.search);
 app.post('/reviews', ReviewController.createReview);
 app.get('/reviews/:reviewId', ReviewController.getById);
 app.get('/review/user/:userId', ReviewController.getByUserId);
+app.get('/review/user/:userId/media/:mediaId', ReviewController.getByUserIdMediaId);
 app.get('/review/media/:mediaId', ReviewController.getByMediaId);
 app.get('/reviews', ReviewController.index);
 app.get('/review/latest', ReviewController.latest);

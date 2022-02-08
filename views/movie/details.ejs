@@ -84,6 +84,27 @@
                         <% Movie.reviews.forEach(function(Review){ %>
                             <%- include('../templates/userreviewcard', { Review, IsLogged, UserId }); %>
                           <% }); %>
+                          <li class="review-card" id="new-review">
+                                <button class="review-image-button">
+                                    <% if (Movie.imagePoster) { %>
+                                        <img class="review-image" src="<%= Movie.imagePoster %>" alt="Not Found"/>
+                                    <%} else { %>
+                                        <img class="review-image" src="https://t3.ftcdn.net/jpg/02/68/55/60/240_F_268556012_c1WBaKFN5rjRxR2eyV33znK4qnYeKZjm.jpg" alt="Not Found"/>
+                                    <% } %>
+                                </button>
+                                <div class="review-body">
+                                    <a class="card-text">Adicionar Crítica</a>
+                                    <div class="card-star">
+                                        <label for="score" class="card-text">Nota: </label>
+                                        <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                                        <input id="score" class="review-input card-text" type="number" name="score" required min="0" max="10"><br>
+                                    </div>
+                                    <label for="description" class="card-text">Crítica: </label>
+                                    <textarea id="description" name="description" cols="50" rows="7"  class="review-input card-text long-text"></textarea>
+                                </div>
+                            <button class="review-button" type="submit" id="btn-login" onclick="addReview('<%-UserId%>', '<%-Movie.id%>')">+</button>
+                        </li>
+                        <script>loadNewReview('<%-UserId%>', '<%-Movie.id%>')</script> 
                     </ul>
                 </div>
                 <div class="movie-title-more">
